@@ -7,7 +7,10 @@ const Slide = ({ image }) => {
           {image.headline}
         </h1>
         <p className=" w-3/5">{image.body}</p>
-        <Link className="slide-btn uppercase border border-violet-50 h-12 w-72 hover:text-orange-50  duration-300 font-medium mt-5">
+        <Link
+          to={`/products/${image.category}`}
+          className="slide-btn uppercase border border-violet-50 h-12 w-72 hover:text-orange-50  duration-300 font-medium mt-5"
+        >
           <span className=" z-[2] absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-full text-center">
             {image.cta}
           </span>
