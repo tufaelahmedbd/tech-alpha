@@ -4,14 +4,6 @@ import Slide from "./Slide";
 const data = [
   {
     id: 1,
-    src: "https://i.ibb.co/kmr5qQv/headphones.jpg",
-    headline: "Enhance your listening experience",
-    body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
-    cta: "Experience enhanced sound",
-    category: "headphones",
-  },
-  {
-    id: 2,
     src: "https://i.ibb.co/mtc8v16/tv.jpg",
     headline: "Upgrade your home entertainment with our TVs",
     body: "Experience the latest in home entertainment with our selection of TVs. From sleek and modern designs to advanced features like 4K resolution and smart capabilities, our TVs will bring your favorite movies, TV shows, and streaming content to life.",
@@ -19,12 +11,22 @@ const data = [
     category: "tvs",
   },
   {
-    id: 3,
+    id: 2,
+
     src: "https://i.ibb.co/XszmG02/camera.jpg",
     headline: "DSLR cameras for stunning photos",
     body: "Are you an aspiring photographer looking to take your skills to the next level? Our DSLR cameras offer advanced features and high-quality image sensors to help you capture stunning photos. From landscape shots to portraits, these cameras are perfect for capturing all types of subjects.",
     cta: "Shop DSLR cameras now",
     category: "cameras",
+  },
+  {
+    id: 3,
+
+    src: "https://i.ibb.co/kmr5qQv/headphones.jpg",
+    headline: "Enhance your listening experience",
+    body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
+    cta: "Experience enhanced sound",
+    category: "headphones",
   },
   {
     id: 4,
@@ -65,7 +67,7 @@ const Slider = () => {
           <Slide image={image} key={image.id} />
         ))}
       </div>
-      <div className="btns absolute z-[1] left-0 right-0 bottom-0 m-auto  text-2xl flex gap-10 w-fit">
+      <div className="btns absolute z-[1] left-0 right-0 bottom-20 m-auto  text-2xl flex gap-10 w-fit">
         <button
           onClick={prevSlide}
           className="prev-btn h-14 w-20  flex justify-center items-center bg-violet-900 text-violet-200 border border-violet-200 hover:bg-gray-900 hover:text-gray-200 hover:border-gray-200 duration-300"
