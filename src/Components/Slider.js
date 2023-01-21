@@ -4,11 +4,11 @@ import Slide from "./Slide";
 const data = [
   {
     id: 1,
-    src: "https://i.ibb.co/XszmG02/camera.jpg",
-    headline: "DSLR cameras for stunning photos",
-    body: "Are you an aspiring photographer looking to take your skills to the next level? Our DSLR cameras offer advanced features and high-quality image sensors to help you capture stunning photos. From landscape shots to portraits, these cameras are perfect for capturing all types of subjects.",
-    cta: "Shop DSLR cameras now",
-    category: "cameras",
+    src: "https://i.ibb.co/kmr5qQv/headphones.jpg",
+    headline: "Enhance your listening experience",
+    body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
+    cta: "Experience enhanced sound",
+    category: "headphones",
   },
   {
     id: 2,
@@ -20,11 +20,11 @@ const data = [
   },
   {
     id: 3,
-    src: "https://i.ibb.co/kmr5qQv/headphones.jpg",
-    headline: "Enhance your listening experience",
-    body: "Take your music, movies, and more to the next level with our headphones. Our selection offers a range of styles and features, including noise-cancelling technology, wireless connectivity, and comfortable designs for all-day wear.",
-    cta: "Experience enhanced sound",
-    category: "headphones",
+    src: "https://i.ibb.co/XszmG02/camera.jpg",
+    headline: "DSLR cameras for stunning photos",
+    body: "Are you an aspiring photographer looking to take your skills to the next level? Our DSLR cameras offer advanced features and high-quality image sensors to help you capture stunning photos. From landscape shots to portraits, these cameras are perfect for capturing all types of subjects.",
+    cta: "Shop DSLR cameras now",
+    category: "cameras",
   },
   {
     id: 4,
