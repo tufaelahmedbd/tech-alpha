@@ -7,9 +7,9 @@ const Navbar = () => {
     <div className="navbar-bg bg-violet-700 text-violet-50 h-20 flex justify-center items-center">
       <div className="navbar container mx-auto flex items-center justify-between">
         <div className="left">
-          <span className="text-xl font-semibold">
+          <Link to="/" className="text-xl font-semibold">
             tech<span className=" text-orange-500">Alpha</span>
-          </span>
+          </Link>
         </div>
         <div className="right flex items-center gap-5">
           <Link to="/" className="nav-link ">
