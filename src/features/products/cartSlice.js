@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
 
 const initialState = {
   cartItems: localStorage.getItem("cartItem")
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [],
-  cartTotalQuantity: 0,
   cartTotalAmount: 0,
 };
 
@@ -67,8 +65,22 @@ const cartSlice = createSlice({
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       }
     },
+    getSubtotal(state, action) {
+      const subtotal = state.cartItems.reduce((acc, item) => {
+        const { price, cartQuantity } = item;
+        const itemTotal = price * cartQuantity;
+        acc += itemTotal;
+        return acc;
+      }, 0);
+      state.cartTotalAmount = subtotal;
+    },
   },
 });
-export const { addToCart, removeFromCart, clearCart, decreaseCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  decreaseCart,
+  getSubtotal,
+} = cartSlice.actions;
 export default cartSlice.reducer;
