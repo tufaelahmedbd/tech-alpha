@@ -1,4 +1,3 @@
-import Footer from "../Components/Footer";
 import Slider from "../Components/Slider";
 import Products from "../pages/Products";
 

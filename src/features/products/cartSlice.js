@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   cartItems: localStorage.getItem("cartItem")
@@ -20,6 +21,16 @@ const cartSlice = createSlice({
       if (existedItemIndex >= 0) {
         //increase quantity
         state.cartItems[existedItemIndex].cartQuantity += 1;
+        toast.info("Quantitiy increased!", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
         // add to cart
         const assembledItem = {
@@ -27,6 +38,16 @@ const cartSlice = createSlice({
           cartQuantity: 1,
         };
         state.cartItems.push(assembledItem);
+        toast.success("Item added", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
       //add to local storage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -37,12 +58,32 @@ const cartSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
       state.cartItems = updatedCartItems;
+      toast.error("Item removed!", {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       //update local storage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     //remove all items from cart
     clearCart(state, action) {
       state.cartItems = [];
+      toast.warn("Cart cleared!", {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       //update local storage
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
@@ -54,12 +95,33 @@ const cartSlice = createSlice({
       //if exist
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1;
+        toast.info("Quantity decreased!", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
         const updatedCartItems = state.cartItems.filter(
           (item) => item.id !== action.payload.id
         );
 
         state.cartItems = updatedCartItems;
+
+        toast.error("Item removed!", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
 
         //update local storage
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
